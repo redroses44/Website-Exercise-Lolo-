@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 import Articles from './components/Articles'
+import Modal from './components/Modal'
 
 const App = () => {
   return (

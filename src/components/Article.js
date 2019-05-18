@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../App.css'
 import Moment from 'react-moment'
+import Modal from './Modal'
 
 const Article = ({ article }) => {
-  console.log(article)
+  const [showModal, setShowModal] = useState(false)
+
   const {
     author,
     enclosure: { link },
@@ -12,7 +14,13 @@ const Article = ({ article }) => {
     pubDate
   } = article
   return (
-    <div className="box">
+    <div
+      className="box"
+      onClick={() => {
+        setShowModal(!showModal)
+      }}
+    >
+      {showModal && <Modal />}
       <div className="header">
         <h4>{title ? title : 'No title'}</h4>
         {link && <img src={link} alt="" />}

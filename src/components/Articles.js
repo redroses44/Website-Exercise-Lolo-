@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Article from './Article'
 import { connect } from 'react-redux'
 import { getArticles } from '../actions/articles'

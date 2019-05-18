@@ -1,6 +1,5 @@
-import { GET_ARTICLE, GET_ARTICLES } from './types'
+import { GET_ARTICLES } from './types'
 import axios from 'axios'
-import Mercury from '@postlight/mercury-parser'
 export const getArticles = () => async dispatch => {
   try {
     const config = {
@@ -12,6 +11,7 @@ export const getArticles = () => async dispatch => {
     const response = await axios.get(parseUrl + rssUrl, {
       params: config
     })
+
     dispatch({
       type: GET_ARTICLES,
       payload: response.data.items

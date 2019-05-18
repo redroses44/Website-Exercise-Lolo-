@@ -9,7 +9,7 @@ const Articles = ({ getArticles, articles: { loading, articles } }) => {
     getArticles()
   }, [getArticles])
   return (
-    <div>
+    <div className="gridContainer">
       {!loading ? (
         articles.map(article => (
           <Article key={article.guid} article={article} />

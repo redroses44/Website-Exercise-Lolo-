@@ -1,5 +1,6 @@
 import { GET_ARTICLE, GET_ARTICLES } from './types'
 import axios from 'axios'
+import Mercury from '@postlight/mercury-parser'
 export const getArticles = () => async dispatch => {
   try {
     const config = {

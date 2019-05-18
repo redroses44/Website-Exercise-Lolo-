@@ -1,7 +1,14 @@
-.container {
-  max-width: 1100px;
-  margin: auto;
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .spinner4:before {
   content: '';
   box-sizing: border-box;
@@ -21,4 +28,47 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.gridContainer img {
+  width: 100%;
+  max-width: 13rem;
+  height: auto;
+}
+
+.box {
+  background: #eee;
+  padding: 1rem 1.5rem;
+}
+.header {
+  display: flex;
+  align-items: flex-start;
+}
+.header h4 {
+  flex: 20%;
+}
+
+.footer p {
+  font-size: 0.7rem;
+}
+
+.header img {
+  flex: 1;
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  word-wrap: break-word;
+}
+.container {
+  max-width: 1100px !important;
+  margin: auto;
+  margin-top: 2rem;
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+  grid-gap: 1rem;
 }

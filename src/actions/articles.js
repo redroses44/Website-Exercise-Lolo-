@@ -1,5 +1,6 @@
-import { GET_ARTICLES } from './types'
 import axios from 'axios'
+import { GET_ARTICLES } from './types'
+
 export const getArticles = () => async dispatch => {
   try {
     const config = {
@@ -12,10 +13,18 @@ export const getArticles = () => async dispatch => {
       params: config
     })
 
-    dispatch({
-      type: GET_ARTICLES,
-      payload: response.data.items
-    })
+    /* response.data.items.map(item =>
+      Mercury.parse(item.link).then(result => console.log(result))
+    ) */
+
+    //console.log(response.data.items)
+
+    setTimeout(() => {
+      dispatch({
+        type: GET_ARTICLES,
+        payload: response.data.items
+      })
+    }, 500)
   } catch (error) {
     console.error(error)
   }

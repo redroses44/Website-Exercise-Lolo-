@@ -9,23 +9,26 @@ body {
   font-family: 'Montserrat', sans-serif;
   height: 100vh;
 }
+.text {
+  margin: 1rem 0;
+}
 
 a {
-  background: red;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 0.2rem;
   margin: 2rem 0;
   display: block;
-  width: 30%;
+  width: 100%;
   text-align: center;
-  padding: 0.7rem 1rem;
   color: #fff;
+  padding: 1rem 0;
+  background: #444;
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
+
 a:hover {
-  color: red;
-  background: #fff;
+  background-color: #222;
   border: 1px solid #000;
 }
 
@@ -35,13 +38,19 @@ a:hover {
   position: absolute;
   top: 50%;
   left: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
   height: 80px;
   width: 80px;
   border-radius: 50%;
   border: 5px solid black;
   border-top-color: #fff;
   border-bottom-color: #fff;
-  animation: spinner 0.4s ease-in infinite;
+  animation: spinner 0.6s ease-in infinite;
+}
+
+.image {
+  width: 100% !important;
 }
 
 @keyframes spinner {
@@ -51,10 +60,8 @@ a:hover {
 }
 
 .gridContainer img {
-  width: 100%;
-  max-width: 13rem;
-  max-height: 5rem;
-  height: auto;
+  width: 10rem;
+  overflow: hidden;
 }
 
 .box {
@@ -68,8 +75,17 @@ a:hover {
   justify-content: space-between;
 }
 
+.header img {
+  flex: 40;
+  width: 10rem;
+}
+.header h4 {
+  flex: 60;
+}
+
 .footer p {
   font-size: 0.7rem;
+  margin: 0.75rem 0;
 }
 
 .lead {
@@ -78,14 +94,24 @@ a:hover {
   word-wrap: break-word;
 }
 .container {
-  max-width: 1200px;
-  margin: auto;
-  margin-top: 2rem;
+  max-width: 1100px !important;
+  margin: auto !important;
+  margin-top: 2rem !important;
 }
 .gridContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 0.75rem;
+  column-count: 3;
+  column-gap: 2rem;
+}
+.gridContainer > .box {
+  background-color: #eee;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 90%;
+  transition: background-color 0.4s ease-in-out;
+}
+.box:hover {
+  cursor: pointer;
+  background: #ddd;
 }
 .center {
   display: flex;
@@ -100,17 +126,16 @@ hr {
   border: none;
 }
 
-.gridContainer > .box {
-  align-self: flex-start;
-}
-
 .modal {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal:hover {
+  cursor: auto;
 }
 .modal-content {
   position: absolute;
@@ -121,16 +146,62 @@ hr {
   padding: 1rem 1.5rem;
   width: 30rem;
   border-radius: 0.5rem;
+  text-align: center;
 }
 .close-button {
   float: right;
-  width: 1.5rem;
-  line-height: 1.5rem;
+  width: 2rem;
+  line-height: 2rem;
   text-align: center;
   cursor: pointer;
   border-radius: 0.25rem;
-  background-color: #eee;
+  color: #000;
+  font-size: 2rem;
+  background-color: #ccc;
+  transition: 0.4s background-color ease-in-out;
 }
 .close-button:hover {
-  background-color: #ccc;
+  background-color: #aaa;
+}
+
+@media (max-width: 664px) {
+  .hide-sm {
+    display: none;
+  }
+  .gridContainer {
+    grid-gap: 1rem;
+  }
+
+  .header {
+    justify-content: ;
+  }
+  .header img {
+    order: 1;
+    flex: 30%;
+  }
+  .header h4 {
+    order: 2;
+    text-align: center;
+    flex: 70%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 900px !important;
+  }
+  .gridContainer {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 700px !important;
+  }
+}
+@media (max-width: 600px) {
+  .gridContainer {
+    column-count: 1;
+  }
 }

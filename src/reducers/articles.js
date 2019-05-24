@@ -2,7 +2,6 @@ import { GET_ARTICLES } from '../actions/types'
 
 const initialState = {
   articles: [],
-  article: null,
   loading: true
 }
 

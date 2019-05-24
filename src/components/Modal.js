@@ -10,7 +10,6 @@ const Modal = ({
   categories,
   img
 }) => {
-  console.log()
   return (
     <div className="modal">
       <div className="modal-content">
@@ -20,12 +19,16 @@ const Modal = ({
         </h3>
         <hr />
         <img src={img} className="image" alt="" />
-        <p>{description}</p>
-        <p>{pubDate}</p>
+        <div className="text">
+          <p>{description}</p>
+        </div>
+        <div className="footer">
+          <p>{pubDate}</p>
+        </div>
         {categories.map(category => (
           <li>{category}</li>
         ))}
-        <a target="_blank" href={link}>
+        <a target="_blank" rel="noopener noreferrer" href={link}>
           See more
         </a>
       </div>

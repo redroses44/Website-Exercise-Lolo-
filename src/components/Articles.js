@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import Article from './Article'
 import { connect } from 'react-redux'
 import { getArticles } from '../actions/articles'
+import Article from './Article'
 import Spinner from './Spinner'
 
 const Articles = ({ getArticles, articles: { loading, articles } }) => {
